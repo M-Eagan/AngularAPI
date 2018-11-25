@@ -2,13 +2,13 @@
 
 angular
   .module("App")
-  .controller("HomeController", function(HomeService) {
+  .controller("weatherController", function(weatherService) {
     const $ctrl = this;
     
-    function changes(response) {
-      $ctrl.students = response.data;
-    }
+    $ctrl.wfo = "DTX";
+    $ctrl.x = 43;
+    $ctrl.y = 80;
 
-    HomeService.getData().then(changes);
+    $ctrl.result = weatherService.getData($ctrl.wfo, $ctrl.x, $ctrl.y);
 
   });

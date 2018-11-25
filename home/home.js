@@ -4,7 +4,7 @@ const home = {
  
   templateUrl: "home/home.html",
 
-  controller: "HomeController"
+  controller: "weatherController"
 };
 
 angular.module("App").component("home", home);

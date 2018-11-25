@@ -1,19 +1,11 @@
-<form ng-submit="$ctrl.postData($ctrl.newStudent);">
+<body ng-controller="weatherController as $ctrl"></body>
 
-    <input type="text" placeholder="Name" ng-model="$ctrl.newStudent.name">
-    <input type="text" placeholder="Favorite Food" ng-model="$ctrl.newStudent.fav_food">
-    <input type="text" placeholder="Bootcamp Favorite" ng-model="$ctrl.newStudent.boot_fav">
-    <button>Add New Student</button>
-  </form>
-  
+    <form ng-submit="$ctrl.getData($ctrl.wfo, $ctrl.x, $ctrl.y);">
+        <input type="text" placeholder="WFO" ng-model="$ctrl.wfo"/>
+        <input type="number" placeholder="X Coordinate" ng-model="$ctrl.x"/>
+        <input type="number" placeholder="Y Coordinate" ng-model="$ctrl.y"/>
+        <button type="submit">Submit</button>
+        <p>{{$ctrl.result}}</p>
+    </form>
 
-  <section ng-repeat="student in $ctrl.students">
-   
-    <input class="edit__input" type="text" ng-blur="$ctrl.updateData(student);" ng-model="student.name">
-    
-    <input class="edit__input" type="text" ng-blur="$ctrl.updateData(student);" ng-model="student.fav_food">
-  
-    <input class="edit__input" type="text" ng-blur="$ctrl.updateData(student);" ng-model="student.boot_fav">
-  
-    <button ng-click="$ctrl.deleteData(student.id);">X</button>
-  </section>
+</body>
